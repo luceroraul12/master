@@ -1,1 +1,13 @@
 <p>formulario-factura works!</p>
+<form #facturaForm="ngForm" (ngSubmit)=" enviarDatos()">
+    <div>
+        <label>ID DEL SERVICIO</label>
+        <input type="text" name="idFactura" id="idFactura">
+    </div>
+    <div>
+        <label>NOMBRE DEL SERVICIO</label>
+        <input type="text" name="nombreServicio" id="nombreServicio">
+    </div>
+
+    <input type="submit" value="Enviar">
+</form>

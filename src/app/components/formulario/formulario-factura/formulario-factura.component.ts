@@ -12,4 +12,8 @@ export class FormularioFacturaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  enviarDatos(){
+    alert("INFORMACION ENVIADA");
+  }
+
 }
