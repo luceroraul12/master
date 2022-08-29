@@ -4,9 +4,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { PagoComponent } from './components/pago/pago.component';
@@ -34,7 +36,8 @@ import { FormularioPagoComponent } from './components/formulario/formulario-pago
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
