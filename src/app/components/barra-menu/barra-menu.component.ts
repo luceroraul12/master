@@ -9,9 +9,10 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 })
 export class BarraMenuComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
-  shouldRun = true;
+
+
  
 }

@@ -1,16 +1,23 @@
-<nav>
-    <ul>
-        <li>
-            <a [routerLink]="['home']">INICIO</a>
-        </li>
-        <li>
-            <a [routerLink]="['facturas']">FACTURAS</a>
-        </li>
-        <li>
-            <a [routerLink]="['pagos']">PAGOS</a>
-        </li>
-        <li>
-            <a [routerLink]="['resumen']">RESUMEN</a>
-        </li>
-    </ul>
-</nav>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <h1>TITULO</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['home']" (click)="sidenav.toggle()">INICIO</a>
+            <a mat-list-item [routerLink]="['facturas']" (click)="sidenav.toggle()">FACTURAS</a>
+            <a mat-list-item [routerLink]="['pagos']" (click)="sidenav.toggle()">PAGOS</a>
+            <a mat-list-item [routerLink]="['resumen']" (click)="sidenav.toggle()">RESUMEN</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="contenedor-rutas">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
