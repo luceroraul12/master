@@ -7,6 +7,8 @@ import { MatListModule} from '@angular/material/list';
 import { MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +19,8 @@ import { BarraMenuComponent } from './components/barra-menu/barra-menu.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioFacturaComponent } from './components/formulario/formulario-factura/formulario-factura.component';
 import { FormularioPagoComponent } from './components/formulario/formulario-pago/formulario-pago.component';
+import { TablaFacturaComponent } from './components/tablas/tabla-factura/tabla-factura.component';
+import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { FormularioPagoComponent } from './components/formulario/formulario-pago
     ResumenComponent,
     BarraMenuComponent,
     FormularioFacturaComponent,
-    FormularioPagoComponent
+    FormularioPagoComponent,
+    TablaFacturaComponent,
+    TablaPagoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import { FormularioPagoComponent } from './components/formulario/formulario-pago
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
