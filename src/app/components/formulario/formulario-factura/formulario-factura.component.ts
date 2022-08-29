@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Factura } from 'src/app/models/factura';
 
 @Component({
   selector: 'app-formulario-factura',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioFacturaComponent implements OnInit {
 
-  constructor() { }
+  public factura: Factura = {} as Factura;
+
+
+  constructor() {}
 
   ngOnInit(): void {
   }
 
   enviarDatos(){
-    alert("INFORMACION ENVIADA");
+    alert("INFORMACION ENVIADA: "+ this.factura.id + " " + this.factura.nombre);
   }
 
 }

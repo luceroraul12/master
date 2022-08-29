@@ -1,13 +1,16 @@
-<p>formulario-factura works!</p>
 <form #facturaForm="ngForm" (ngSubmit)=" enviarDatos()">
     <div>
         <label>ID DEL SERVICIO</label>
-        <input type="text" name="idFactura" id="idFactura">
+        <input type="text" name="idFactura" #idFactura="ngModel" [(ngModel)]="factura.id">
     </div>
     <div>
         <label>NOMBRE DEL SERVICIO</label>
-        <input type="text" name="nombreServicio" id="nombreServicio">
+        <input type="text" name="nombreFactura" #nombre="ngModel" [(ngModel)]="factura.nombre" required>
+        <small *ngIf="!nombre.valid && nombre.touched">
+            NOMBRE REQUERIDO
+        </small>
     </div>
 
-    <input type="submit" value="Enviar">
+
+    <input type="submit" value="Enviar" [disabled]="facturaForm.invalid">
 </form>
