@@ -1,23 +1,10 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <button mat-icon-button>
-            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
-        </button>
-        <h1>TITULO</h1>
-    </mat-toolbar-row>
+    <span>Mensualidad</span>
+    <span class="example-spacer"></span>
+    <button mat-button [routerLink]="['home']">INICIO</button>
+    <button mat-button [routerLink]="['facturas']">FACTURAS</button>
+    <button mat-button [routerLink]="['pagos']">PAGOS</button>
+    <button mat-button [routerLink]="['resumen']">RESUMEN</button>
+    <span class="example-spacer"></span>
 </mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav #sidenav>
-        <mat-nav-list>
-            <a mat-list-item [routerLink]="['home']" (click)="sidenav.toggle()">INICIO</a>
-            <a mat-list-item [routerLink]="['facturas']" (click)="sidenav.toggle()">FACTURAS</a>
-            <a mat-list-item [routerLink]="['pagos']" (click)="sidenav.toggle()">PAGOS</a>
-            <a mat-list-item [routerLink]="['resumen']" (click)="sidenav.toggle()">RESUMEN</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="contenedor-rutas">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
