@@ -7,7 +7,7 @@ import { ResumenComponent } from './components/resumen/resumen.component';
 const routes: Routes = [
   {path: '',  component: ResumenComponent},
   {path: 'home', component: ResumenComponent},
-  {path: 'factura', component: FacturaComponent},
+  {path: 'facturas', component: FacturaComponent},
   {path: 'pagos', component: PagoComponent},
   {path: '**', component: ResumenComponent},
 ];
