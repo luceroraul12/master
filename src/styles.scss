@@ -3,8 +3,28 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
 
 .vista{
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.formulario{
+    mat-form-field{
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+.botoneras{
+    button{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
 }
