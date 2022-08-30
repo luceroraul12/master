@@ -1,16 +1,7 @@
-<form #facturaForm="ngForm" (ngSubmit)=" enviarDatos()">
-    <div>
-        <label>ID DEL SERVICIO</label>
-        <input type="text" name="idFactura" #idFactura="ngModel" [(ngModel)]="factura.id">
-    </div>
-    <div>
-        <label>NOMBRE DEL SERVICIO</label>
-        <input type="text" name="nombreFactura" #nombre="ngModel" [(ngModel)]="factura.nombre" required>
-        <small *ngIf="!nombre.valid && nombre.touched">
-            NOMBRE REQUERIDO
-        </small>
-    </div>
-
-
-    <input type="submit" value="Enviar" [disabled]="facturaForm.invalid">
+<form class="formulario">
+    <mat-form-field>
+        <mat-label>Nombre de Factura</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Crear</button>
 </form>

@@ -8,16 +8,11 @@ import { Factura } from 'src/app/models/factura';
 })
 export class FormularioFacturaComponent implements OnInit {
 
-  public factura: Factura = {} as Factura;
-
 
   constructor() {}
 
   ngOnInit(): void {
   }
 
-  enviarDatos(){
-    alert("INFORMACION ENVIADA: "+ this.factura.id + " " + this.factura.nombre);
-  }
 
 }
