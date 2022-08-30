@@ -6,10 +6,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatListModule} from '@angular/material/list';
 import { MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTableModule} from '@angular/material/table';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
@@ -21,6 +21,8 @@ import { FormularioFacturaComponent } from './components/formulario/formulario-f
 import { FormularioPagoComponent } from './components/formulario/formulario-pago/formulario-pago.component';
 import { TablaFacturaComponent } from './components/tablas/tabla-factura/tabla-factura.component';
 import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.component';
+import { BotoneraGeneralComponent } from './components/botonera-general/botonera-general.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.co
     FormularioFacturaComponent,
     FormularioPagoComponent,
     TablaFacturaComponent,
-    TablaPagoComponent
+    TablaPagoComponent,
+    BotoneraGeneralComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.co
     MatButtonModule,
     FormsModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
