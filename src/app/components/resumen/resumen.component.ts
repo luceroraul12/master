@@ -12,4 +12,6 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }
