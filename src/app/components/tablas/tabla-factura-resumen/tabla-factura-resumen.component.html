@@ -6,5 +6,5 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="abrirEnlace(row)"></tr>
 </table>
