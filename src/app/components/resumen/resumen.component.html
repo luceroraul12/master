@@ -1,7 +1,19 @@
 <div class="vista">
     <mat-toolbar>
         <span>RESUMEN</span>
+        <div class="example-spacer"></div>
+        <app-botonera-general></app-botonera-general>
     </mat-toolbar>
     <p>FORMULARIO DE RESUMEN</p>
-    <p>TABLA PARA RESUMEN</p>
+    <mat-grid-list cols="4" rowHeight="90vh">
+        <mat-grid-tile [colspan]="1">
+            <app-tabla-factura-resumen [nombreTabla]="'Facturas Cargadas'"></app-tabla-factura-resumen>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1">
+            <app-tabla-factura-resumen [nombreTabla]="'Facturas Faltantes'"></app-tabla-factura-resumen>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+            <app-tabla-pago></app-tabla-pago>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
