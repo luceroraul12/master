@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
@@ -22,6 +24,7 @@ import { FormularioPagoComponent } from './components/formulario/formulario-pago
 import { TablaFacturaComponent } from './components/tablas/tabla-factura/tabla-factura.component';
 import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.component';
 import { BotoneraGeneralComponent } from './components/botonera-general/botonera-general.component';
+import { TablaFacturaResumenComponent } from './components/tablas/tabla-factura-resumen/tabla-factura-resumen.component';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { BotoneraGeneralComponent } from './components/botonera-general/botonera
     FormularioPagoComponent,
     TablaFacturaComponent,
     TablaPagoComponent,
-    BotoneraGeneralComponent
+    BotoneraGeneralComponent,
+    TablaFacturaResumenComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { BotoneraGeneralComponent } from './components/botonera-general/botonera
     MatFormFieldModule,
     MatTableModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
