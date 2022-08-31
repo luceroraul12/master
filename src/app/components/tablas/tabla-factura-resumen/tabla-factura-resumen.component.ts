@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 const ELEMENT_DATA = [
-  {name: 'Hydrogen'},
-  {name: 'Helium'},
+  {name: 'Hydrogen', link: "https://www.google.com/"},
+  {name: 'Helium', link: "https://www.youtube.com/"},
   {name: 'Lithium'},
   {name: 'Beryllium'},
   {name: 'Boron'},
@@ -34,7 +34,8 @@ export class TablaFacturaResumenComponent implements OnInit {
   displayedColumns: string[] = ['name'];
   dataSource = ELEMENT_DATA;
 
-  getRecord(row: any){
+  abrirEnlace(row: any){
     console.log(row);
+    window.open(row.link, '_blank')?.focus();
   }
 }
