@@ -10,6 +10,7 @@ export class FormularioResumenComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
+  }  
+  
+  
 }
