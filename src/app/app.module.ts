@@ -13,7 +13,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatMomentDateModule } from '@angular/material-moment-adapter'
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
@@ -62,7 +63,8 @@ import { FormularioResumenComponent } from './components/formulario/formulario-r
     MatTabsModule,
     MatGridListModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
