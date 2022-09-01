@@ -12,6 +12,16 @@ export class ResumenComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  abrirCargarFactura(){
+
+  }
+
+  abrirEliminarPago(){
+
+  }
+
+  abrirModificarPago(){
+    
+  }
 
 }
