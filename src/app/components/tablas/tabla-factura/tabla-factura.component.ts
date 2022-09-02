@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FormularioFacturaComponent } from '../../formulario/formulario-factura/formulario-factura.component';
 
 export interface PeriodicElement {
   name: string;
@@ -27,11 +29,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TablaFacturaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   displayedColumns: string[] = ['position', 'name', 'options'];
   dataSource = ELEMENT_DATA;
+
+
+  editar(){
+    const dialogRef = this.dialog.open(FormularioFacturaComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  eliminar(){
+    alert("Seguro que quieres eliminar el servicio: ABC?")
+  }
 }
