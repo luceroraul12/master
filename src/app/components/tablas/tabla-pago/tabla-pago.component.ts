@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FormularioPagoComponent } from '../../formulario/formulario-pago/formulario-pago.component';
 
 export interface PeriodicElement {
   name: string;
@@ -28,12 +30,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TablaPagoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   displayedColumns: string[] = ['position', 'name', 'cost', 'date','options'];
   dataSource = ELEMENT_DATA;
+
+
+  editar(){
+    const dialogRef = this.dialog.open(FormularioPagoComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  eliminar(){
+    alert("Seguro que quieres eliminar el pago de: ABC 123 dd/MM/yyyy?")
+  }
 
 }
