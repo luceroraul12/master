@@ -31,6 +31,7 @@ import { TablaFacturaResumenComponent } from './components/tablas/tabla-factura-
 import { FormularioResumenComponent } from './components/formulario/formulario-resumen/formulario-resumen.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDatepickerModule,
     MatMomentDateModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

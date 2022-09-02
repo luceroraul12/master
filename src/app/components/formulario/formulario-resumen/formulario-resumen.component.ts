@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-formulario-resumen',
@@ -7,10 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioResumenComponent implements OnInit {
 
-  constructor() { }
+
+  formResumen!: FormGroup;
+
+  constructor(
+    private dateAdapter: DateAdapter<Date>
+  ) { 
+
+    dateAdapter.setLocale("es-AR");
+
+  }
 
   ngOnInit(): void {
+    this.formResumen = new FormGroup(
+      {
+        fecha: new FormControl('', Validators.required)
+      }
+    );
+
+
   }  
   
-  
+  cargar(){
+    let fecha = this.formResumen.get("fecha")?.value;
+    alert("Cargando fecha " + fecha)
+  }
 }

@@ -1,10 +1,12 @@
 <div class="formulario">
-    <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
-    </mat-form-field>
-    <button mat-raised-button color="primary">CARGAR</button>
+    <form [formGroup]="formResumen" (ngSubmit)="cargar()">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formResumen.valid">CARGAR</button>
+    </form>
 </div>
