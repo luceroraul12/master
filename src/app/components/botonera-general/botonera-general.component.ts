@@ -28,6 +28,12 @@ export class BotoneraGeneralComponent implements OnInit {
     });
   }
 
+esResumen(): boolean{
+  return this.tipo == "resumen";
+}
+
+
+
 crear(){
   this.adaptarTipoyCrear();
 }
