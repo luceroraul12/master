@@ -1,5 +1,5 @@
 <div class="botoneras">
     <button mat-raised-button color="primary" (click)="crear()" *ngIf="!esResumen()">CREAR</button>
-    <button mat-raised-button color="primary" *ngIf="esResumen()">IMPRIMIR</button>
     <button mat-raised-button color="primary" (click)="cargarMes()" *ngIf="esResumen()">CARGAR MES</button>
+    <button mat-raised-button color="primary" (click)="imprimir()" *ngIf="esResumen()">IMPRIMIR</button>
 </div>

@@ -32,7 +32,9 @@ esResumen(): boolean{
   return this.tipo == "resumen";
 }
 
-
+imprimir(){
+  alert("imprimiendo");
+}
 
 crear(){
   this.adaptarTipoyCrear();
