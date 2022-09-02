@@ -30,6 +30,7 @@ import { BotoneraGeneralComponent } from './components/botonera-general/botonera
 import { TablaFacturaResumenComponent } from './components/tablas/tabla-factura-resumen/tabla-factura-resumen.component';
 import { FormularioResumenComponent } from './components/formulario/formulario-resumen/formulario-resumen.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     MatGridListModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
