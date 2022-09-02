@@ -34,7 +34,7 @@ export class TablaFacturaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['position', 'name', 'options'];
+  displayedColumns: string[] = ['position', 'name', 'url','options'];
   dataSource = ELEMENT_DATA;
 
 
