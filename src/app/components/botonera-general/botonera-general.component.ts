@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FormularioResumenComponent } from '../formulario/formulario-resumen/formulario-resumen.component';
 
 @Component({
   selector: 'app-botonera-general',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotoneraGeneralComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  cargarMes(){
+    const dialogRef = this.dialog.open(FormularioResumenComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

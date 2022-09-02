@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormularioFacturaComponent } from '../../formulario/formulario-factura/formulario-factura.component';
+import { FormularioPagoComponent } from '../../formulario/formulario-pago/formulario-pago.component';
 
 const ELEMENT_DATA = [
   {name: 'Hydrogen', link: "https://www.google.com/"},
@@ -43,7 +43,7 @@ export class TablaFacturaResumenComponent implements OnInit {
   }
 
   abrirCargarFactura(){
-    const dialogRef = this.dialog.open(FormularioFacturaComponent, {
+    const dialogRef = this.dialog.open(FormularioPagoComponent, {
       width: '250px',
       data: {},
     });
