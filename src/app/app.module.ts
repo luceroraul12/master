@@ -15,6 +15,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
@@ -70,7 +71,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatMomentDateModule,
     MatDialogModule,
     MatTooltipModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
