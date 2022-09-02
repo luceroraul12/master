@@ -29,6 +29,7 @@ import { TablaPagoComponent } from './components/tablas/tabla-pago/tabla-pago.co
 import { BotoneraGeneralComponent } from './components/botonera-general/botonera-general.component';
 import { TablaFacturaResumenComponent } from './components/tablas/tabla-factura-resumen/tabla-factura-resumen.component';
 import { FormularioResumenComponent } from './components/formulario/formulario-resumen/formulario-resumen.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { FormularioResumenComponent } from './components/formulario/formulario-r
     BotoneraGeneralComponent,
     TablaFacturaResumenComponent,
     FormularioResumenComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
