@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioFacturaComponent } from '../../formulario/formulario-factura/formulario-factura.component';
+import { Factura } from '../../../models/factura';
 
 export interface PeriodicElement {
   name: string;
@@ -38,9 +39,9 @@ export class TablaFacturaComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 
-  editar(){
+  editar(factura: Factura){
     const dialogRef = this.dialog.open(FormularioFacturaComponent, {
-      data: {},
+      data: {factura},
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -48,7 +49,7 @@ export class TablaFacturaComponent implements OnInit {
     });
   }
 
-  eliminar(){
+  eliminar(factura: Factura){
     alert("Seguro que quieres eliminar el servicio: ABC?")
   }
 }
