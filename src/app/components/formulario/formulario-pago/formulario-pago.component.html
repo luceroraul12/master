@@ -1,17 +1,22 @@
 <form class="formulario" #formPago="ngForm" (ngSubmit)="cargar()">
     <mat-form-field appearance="fill">
         <mat-label>Select an option</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let factura of facturas" value="factura"> {{factura.nombre}} </mat-option>
+        <mat-select name="factura" [(ngModel)]="pago.factura">
+            <mat-option *ngFor="let factura of facturas" value="factura">
+                {{factura.nombre}}
+            </mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Pago</mat-label>
-        <input matInput name="costo">
+        <input matInput name="pago" [(ngModel)]="pago.pago">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <mat-label>Fecha de Pago</mat-label>
-        <input matInput name="fecha">
+        <input matInput [matDatepicker]="picker" name="fechaDePago" [(ngModel)]="pago.fechaDePago">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="multi-year" panelClass="example-month-picker"></mat-datepicker>
     </mat-form-field>
-    <button mat-raised-button color="primary">Crear</button>
+    <button type="submit" mat-raised-button color="primary">Crear</button>
 </form>

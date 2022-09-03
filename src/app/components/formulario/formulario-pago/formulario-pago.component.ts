@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Pago } from 'src/app/models/pago';
 import { MensualidadService } from '../../../services/mensualidad.service';
+import { now } from 'moment';
 
 @Component({
   selector: 'app-formulario-pago',
@@ -8,9 +10,22 @@ import { MensualidadService } from '../../../services/mensualidad.service';
 })
 export class FormularioPagoComponent implements OnInit {
 
+  public pago: Pago = {
+    id: 0,
+    pago: 0,
+    fechaDePago: new Date(now()),
+    factura: {
+      id: 0,
+      nombre: "",
+      url: ""
+    }
+  }
+
+
   get facturas(){
     return this.mensualidadService.facturasTotales;
   }
+  
 
   constructor(
     private mensualidadService: MensualidadService
@@ -20,7 +35,7 @@ export class FormularioPagoComponent implements OnInit {
   }
 
   cargar(): void{
-
+    this.mensualidadService.crearPago(this.pago);
   }
 
 }
