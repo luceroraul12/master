@@ -1,7 +1,11 @@
-<form class="formulario">
+<form class="formulario" #facturaForm="ngForm" (ngSubmit)="crear()">
     <mat-form-field>
         <mat-label>Nombre de Factura</mat-label>
-        <input matInput>
+        <input matInput name="nombre" [(ngModel)]="factura.nombre">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>URL</mat-label>
+        <input matInput name="url" [(ngModel)]="factura.url">
     </mat-form-field>
     <button mat-raised-button color="primary">Crear</button>
 </form>
