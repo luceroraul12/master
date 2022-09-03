@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { now } from 'moment';
 import { Factura } from '../models/factura';
 import { Pago } from '../models/pago';
 
@@ -28,8 +29,14 @@ export class MensualidadService {
     {
       id: 1,
       pago: 123.24,
-      fechaDePago: new Date("03/05/2022"),
+      fechaDePago: new Date(now()),
       factura: this._facturasTotales[0]
+    },
+    {
+      id: 2,
+      pago: 5000.34,
+      fechaDePago: new Date(now()),
+      factura: this._facturasTotales[1]
     }
   ];
 
