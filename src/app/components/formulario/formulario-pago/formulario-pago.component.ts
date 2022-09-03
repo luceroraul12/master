@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MensualidadService } from '../../../services/mensualidad.service';
 
 @Component({
   selector: 'app-formulario-pago',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioPagoComponent implements OnInit {
 
-  constructor() { }
+  get facturas(){
+    return this.mensualidadService.facturasTotales;
+  }
+
+  constructor(
+    private mensualidadService: MensualidadService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  cargar(): void{
+
   }
 
 }
