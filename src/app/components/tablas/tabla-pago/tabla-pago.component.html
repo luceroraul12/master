@@ -12,26 +12,26 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Facturas </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.factura.nombre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Costo </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        <th mat-header-cell *matHeaderCellDef> Fecha de Pago </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
     </ng-container>
 
     <ng-container matColumnDef="cost">
-        <th mat-header-cell *matHeaderCellDef> Fecha de pago </th>
-        <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+        <th mat-header-cell *matHeaderCellDef> Costo </th>
+        <td mat-cell *matCellDef="let element"> {{element.pago}} </td>
     </ng-container>
 
     <ng-container matColumnDef="options">
         <th mat-header-cell *matHeaderCellDef> Opciones </th>
         <td mat-cell *matCellDef="let element" style="text-align: center;">
-            <a (click)="editar()" matTooltip="editar">
+            <a (click)="editar(element)" matTooltip="editar">
                 <mat-icon>edit</mat-icon>
             </a>
-            <a (click)="eliminar()" matTooltip="eliminar">
+            <a (click)="eliminar(element)" matTooltip="eliminar">
                 <mat-icon>delete</mat-icon>
             </a>
         </td>
