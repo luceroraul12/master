@@ -17,6 +17,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 
+
 import { AppComponent } from './app.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { PagoComponent } from './components/pago/pago.component';
@@ -35,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MensualidadService } from './services/mensualidad.service';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -75,7 +77,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTooltipModule,
     MatNativeDateModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [
     MensualidadService

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioFacturaComponent } from '../../formulario/formulario-factura/formulario-factura.component';
-import { Factura } from '../../../models/factura';
 import { MensualidadService } from '../../../services/mensualidad.service';
+import { Factura } from 'src/app/models/mensualidad.interface';
 
 export interface PeriodicElement {
   name: string;

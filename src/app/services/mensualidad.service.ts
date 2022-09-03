@@ -1,44 +1,20 @@
 import { Injectable } from '@angular/core';
 import { now } from 'moment';
-import { Factura } from '../models/factura';
-import { Pago } from '../models/pago';
+import { HttpClient } from '@angular/common/http';
+import { Factura, Pago, Mensualidad } from '../models/mensualidad.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MensualidadService {
 
-  private _facturasTotales: Factura[] = [
-    {
-      id: 1,
-      nombre: "movistar",
-      url: "www.movistar.com"
-    },
-    {
-      id: 2,
-      nombre: "supercanal",
-      url: "www.supercanal.com"
-    },
-    {
-      id: 3,
-      nombre: "naranja",
-      url: "www.naranja.com"
-    }
-  ];
-  private _pagosTotales: Pago[] = [
-    {
-      id: 1,
-      pago: 123.24,
-      fechaDePago: new Date(now()),
-      factura: this._facturasTotales[0]
-    },
-    {
-      id: 2,
-      pago: 5000.34,
-      fechaDePago: new Date(now()),
-      factura: this._facturasTotales[1]
-    }
-  ];
+  private urlFactura: string = `${environment.mensualidadApi}/facturas`;
+  private urlPago:    string = `${environment.mensualidadApi}/pagos`;
+  private urlResumen: string = `${environment.mensualidadApi}/resumen`;
+
+  private _facturasTotales: Factura[] = [];
+  private _pagosTotales: Pago[] = [];
 
   get facturasTotales(){
     return [...this._facturasTotales];
@@ -48,7 +24,28 @@ export class MensualidadService {
     return [...this._pagosTotales];
   }
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { 
+    this.obtenerFacturas();
+    this.obtenerPagos();
+  }
+
+  obtenerFacturas(){
+    this.http.get<Mensualidad>("/api/facturas").subscribe(
+      respuesta => {
+        this._facturasTotales = respuesta.facturasCreadas
+      }
+    )
+  }
+
+  obtenerPagos(){
+    this.http.get<Mensualidad>("/api/pagos").subscribe(
+      respuesta => {
+        this._pagosTotales = respuesta.pagosCreados;
+      }
+    )
+  }
 
   crearFactura(factura: Factura):void {
     this._facturasTotales.push(factura);

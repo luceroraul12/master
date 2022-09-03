@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Pago } from 'src/app/models/pago';
 import { MensualidadService } from '../../../services/mensualidad.service';
 import { now } from 'moment';
+import { Pago } from 'src/app/models/mensualidad.interface';
 
 @Component({
   selector: 'app-formulario-pago',
@@ -17,7 +17,6 @@ export class FormularioPagoComponent implements OnInit {
     factura: {
       id: 0,
       nombre: "",
-      url: ""
     }
   }
 

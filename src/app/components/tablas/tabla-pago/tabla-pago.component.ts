@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioPagoComponent } from '../../formulario/formulario-pago/formulario-pago.component';
-import { Pago } from '../../../models/pago';
 import { MensualidadService } from '../../../services/mensualidad.service';
+import { Pago } from 'src/app/models/mensualidad.interface';
 
 @Component({
   selector: 'app-tabla-pago',

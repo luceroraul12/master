@@ -1,6 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Factura } from 'src/app/models/factura';
+import { Factura } from 'src/app/models/mensualidad.interface';
 import { MensualidadService } from 'src/app/services/mensualidad.service';
 
 @Component({
@@ -13,7 +13,6 @@ export class FormularioFacturaComponent implements OnInit {
   public factura: Factura = {
     id: 0,
     nombre: "",
-    url: ""
   };
 
 
