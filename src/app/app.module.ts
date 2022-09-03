@@ -33,6 +33,7 @@ import { FormularioResumenComponent } from './components/formulario/formulario-r
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MensualidadService } from './services/mensualidad.service';
 
 
 @NgModule({
@@ -74,7 +75,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    MensualidadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
