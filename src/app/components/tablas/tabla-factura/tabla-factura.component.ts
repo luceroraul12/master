@@ -46,7 +46,7 @@ export class TablaFacturaComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'url','options'];
 
 
-  editar(factura: Factura){
+  editar(factura: Factura):void {
     const dialogRef = this.dialog.open(FormularioFacturaComponent, {
       data: factura,
     });
@@ -56,9 +56,7 @@ export class TablaFacturaComponent implements OnInit {
     });
   }
 
-  eliminar(factura: Factura){
-    alert("Seguro que quieres eliminar el servicio: "+factura.nombre+"?");
+  eliminar(factura: Factura):void {
     this.mensualidadService.eliminarFactura(factura);
-
   }
 }
