@@ -57,6 +57,8 @@ export class TablaFacturaComponent implements OnInit {
   }
 
   eliminar(factura: Factura){
-    alert("Seguro que quieres eliminar el servicio: ABC?")
+    alert("Seguro que quieres eliminar el servicio: "+factura.nombre+"?");
+    this.mensualidadService.eliminarFactura(factura);
+
   }
 }
