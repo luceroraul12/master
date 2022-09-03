@@ -1,15 +1,17 @@
-<form class="formulario">
-    <mat-form-field>
-        <mat-label>Nombre de Factura</mat-label>
-        <input matInput>
+<form class="formulario" #formPago="ngForm" (ngSubmit)="cargar()">
+    <mat-form-field appearance="fill">
+        <mat-label>Select an option</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let factura of facturas" value="factura"> {{factura.nombre}} </mat-option>
+        </mat-select>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Pago</mat-label>
-        <input matInput>
+        <input matInput name="costo">
     </mat-form-field>
     <mat-form-field>
         <mat-label>Fecha de Pago</mat-label>
-        <input matInput>
+        <input matInput name="fecha">
     </mat-form-field>
     <button mat-raised-button color="primary">Crear</button>
 </form>
