@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Factura } from 'src/app/models/factura';
 import { MensualidadService } from 'src/app/services/mensualidad.service';
 
@@ -15,9 +16,12 @@ export class FormularioFacturaComponent implements OnInit {
     url: ""
   };
 
+
   constructor(
-    private mensualidadService: MensualidadService
+    private mensualidadService: MensualidadService,
+    @Inject(MAT_DIALOG_DATA) public data: Factura
   ) {
+    this.factura = data;
   }
 
   ngOnInit(): void {

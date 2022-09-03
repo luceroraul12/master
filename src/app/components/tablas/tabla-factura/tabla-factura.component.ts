@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioFacturaComponent } from '../../formulario/formulario-factura/formulario-factura.component';
 import { Factura } from '../../../models/factura';
+import { MensualidadService } from '../../../services/mensualidad.service';
 
 export interface PeriodicElement {
   name: string;
@@ -30,18 +31,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TablaFacturaComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  get dataSource(){
+    return this.mensualidadService.facturasTotales;
+  }
+
+  constructor(
+    public dialog: MatDialog,
+    public mensualidadService: MensualidadService
+    ) { }
 
   ngOnInit(): void {
   }
 
   displayedColumns: string[] = ['position', 'name', 'url','options'];
-  dataSource = ELEMENT_DATA;
 
 
   editar(factura: Factura){
     const dialogRef = this.dialog.open(FormularioFacturaComponent, {
-      data: {factura},
+      data: factura,
     });
 
     dialogRef.afterClosed().subscribe(result => {
