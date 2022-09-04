@@ -1,19 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Factura } from 'src/app/models/mensualidad.interface';
 import { FormularioPagoComponent } from '../../formulario/formulario-pago/formulario-pago.component';
-
-const ELEMENT_DATA = [
-  {name: 'Hydrogen', link: "https://www.google.com/"},
-  {name: 'Helium', link: "https://www.youtube.com/"},
-  {name: 'Lithium'},
-  {name: 'Beryllium'},
-  {name: 'Boron'},
-  {name: 'Carbon'},
-  {name: 'Nitrogen'},
-  {name: 'Oxygen'},
-  {name: 'Fluorine'},
-  {name: 'Neon'},
-];
 
 
 
@@ -25,6 +13,8 @@ const ELEMENT_DATA = [
 export class TablaFacturaResumenComponent implements OnInit {
 
   @Input() public nombreTabla: string | undefined;
+  @Input() public dataSource: Factura[] = [];
+
 
 
 
@@ -34,7 +24,6 @@ export class TablaFacturaResumenComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['name'];
-  dataSource = ELEMENT_DATA;
 
   abrirEnlace(row: any){
     console.log(row);

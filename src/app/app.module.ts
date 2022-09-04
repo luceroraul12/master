@@ -37,6 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MensualidadService } from './services/mensualidad.service';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { TablaPagoResumenComponent } from './components/tablas/tabla-pago-resumen/tabla-pago-resumen.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     TablaFacturaResumenComponent,
     FormularioResumenComponent,
     InicioComponent,
+    TablaPagoResumenComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { now } from 'moment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Factura, Pago, Mensualidad } from '../models/mensualidad.interface';
 import { environment } from '../../environments/environment';
+import { Conversiones } from './util/conversiones.util';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,21 @@ export class MensualidadService {
 
   private _facturasTotales: Factura[] = [];
   private _pagosTotales: Pago[] = [];
+  private _facturasCargadas: Factura[] = [];
+  private _facturasFaltantes: Factura[] = [];
+  private _pagosCargados: Pago[] = [];
+
+  get pagosCargados(){
+    return [...this._pagosCargados];
+  }
+
+  get facturasCargadas(){
+    return [...this._facturasCargadas];
+  }
+
+  get facturasFaltantes(){
+    return [...this._facturasFaltantes];
+  }
 
   get facturasTotales(){
     return [...this._facturasTotales];
@@ -45,10 +61,17 @@ export class MensualidadService {
   }
 
   obtenerResumen(fecha: Date){
+    
+    const params = new HttpParams()
+    .set("fecha",
+      Conversiones.adptarFecha(fecha)
+    );
 
-    this.http.get<Mensualidad>("/api/mensual").subscribe(
+    this.http.get<Mensualidad>("/api/mensual", {params}).subscribe(
       respuesta => {
-        
+        this._facturasCargadas = respuesta.facturasCargadas;
+        this._facturasFaltantes = respuesta.facturasFaltantes;
+        this._pagosCargados = respuesta.pagosCargados;
       }
     )
 

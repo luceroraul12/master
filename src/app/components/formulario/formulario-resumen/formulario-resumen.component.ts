@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
+import { MensualidadService } from '../../../services/mensualidad.service';
 
 @Component({
   selector: 'app-formulario-resumen',
@@ -13,10 +14,9 @@ export class FormularioResumenComponent implements OnInit {
   formResumen!: FormGroup;
 
   constructor(
-    private dateAdapter: DateAdapter<Date>
+    private mensualidadService: MensualidadService
   ) { 
 
-    dateAdapter.setLocale("es-AR");
 
   }
 
@@ -32,6 +32,6 @@ export class FormularioResumenComponent implements OnInit {
   
   cargar(){
     let fecha = this.formResumen.get("fecha")?.value;
-    alert("Cargando fecha " + fecha)
+    this.mensualidadService.obtenerResumen(fecha);
   }
 }
