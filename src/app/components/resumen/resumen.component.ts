@@ -9,6 +9,9 @@ import { now } from 'moment';
 })
 export class ResumenComponent implements OnInit {
 
+  get fechaElegida(){
+    return this.mensualidadService.fechaElegida;
+  }
 
   get facturasCargadas(){
     return this.mensualidadService.facturasCargadas
@@ -24,10 +27,11 @@ export class ResumenComponent implements OnInit {
 
 
 
+
   constructor(private mensualidadService: MensualidadService) { }
 
   ngOnInit(): void {
-    this.mensualidadService.obtenerResumen(new Date(now()));
+    this.mensualidadService.obtenerResumen(this.fechaElegida);
   }
 
 }

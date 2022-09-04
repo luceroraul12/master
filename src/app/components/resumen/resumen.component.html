@@ -2,6 +2,8 @@
     <mat-toolbar>
         <span>RESUMEN</span>
         <div class="example-spacer"></div>
+        <span>{{fechaElegida | date: "LLLL - yyyy"}}</span>
+        <div class="example-spacer"></div>
         <app-botonera-general [tipo]="'resumen'"></app-botonera-general>
     </mat-toolbar>
     <mat-grid-list cols="4" rowHeight="90vh">
