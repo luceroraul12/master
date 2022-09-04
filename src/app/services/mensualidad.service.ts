@@ -94,6 +94,15 @@ export class MensualidadService {
 
   crearPago(pago: Pago):void {
     this._pagosTotales.push(pago);
+
+    const params = new HttpParams()
+        .set("id-servicio", pago.factura.id)
+        .set("costo", pago.pago)
+        .set("fecha", Conversiones.adptarFecha(pago.fechaDePago));
+
+    this.http.post("/api/pagos", params).subscribe();
+
+    this.obtenerPagos();
   }
 
 
