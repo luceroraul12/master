@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MensualidadService } from '../../services/mensualidad.service';
+import { now } from 'moment';
 
 @Component({
   selector: 'app-resumen',
@@ -26,6 +27,7 @@ export class ResumenComponent implements OnInit {
   constructor(private mensualidadService: MensualidadService) { }
 
   ngOnInit(): void {
+    this.mensualidadService.obtenerResumen(new Date(now()));
   }
 
   abrirCargarFactura(){
