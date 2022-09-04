@@ -44,6 +44,16 @@ export class MensualidadService {
     )
   }
 
+  obtenerResumen(fecha: Date){
+
+    this.http.get<Mensualidad>("/api/mensual").subscribe(
+      respuesta => {
+        
+      }
+    )
+
+  }
+
   crearFactura(factura: Factura):void {
     const params = new HttpParams()
     .set('nombre-servicio', factura.nombre);
