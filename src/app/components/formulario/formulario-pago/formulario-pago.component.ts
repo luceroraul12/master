@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MensualidadService } from '../../../services/mensualidad.service';
 import { now } from 'moment';
 import { Pago } from 'src/app/models/mensualidad.interface';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formulario-pago',
@@ -27,7 +28,8 @@ export class FormularioPagoComponent implements OnInit {
   
 
   constructor(
-    private mensualidadService: MensualidadService
+    private mensualidadService: MensualidadService,
+    public dialogRef: MatDialogRef<FormularioPagoComponent>
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +37,10 @@ export class FormularioPagoComponent implements OnInit {
 
   cargar(): void{
     this.mensualidadService.crearPago(this.pago);
+    this.cerrar();
   }
 
+  cerrar(): void{
+    this.dialogRef.close();
+  }
 }
