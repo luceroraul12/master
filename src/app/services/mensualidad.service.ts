@@ -123,10 +123,10 @@ export class MensualidadService {
   }
 
   eliminarPago(pago: Pago):void {
-    this._pagosTotales.splice(
-      this._pagosTotales.indexOf(pago),
-      1
-    );
+    const params = new HttpParams().set("id",pago.id);
+
+    this.http.delete("/api/pagos/delete", {params}).subscribe();
+    this.obtenerPagos();
   }
 
 

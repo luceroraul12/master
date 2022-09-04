@@ -38,7 +38,7 @@ export class TablaPagoComponent implements OnInit {
   }
 
   eliminar(pago: Pago){
-    alert("Seguro que quieres eliminar el pago de: ABC 123 dd/MM/yyyy?")
+    this.mensualidadService.eliminarPago(pago);
   }
 
 }
