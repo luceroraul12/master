@@ -16,6 +16,7 @@ export class MensualidadService {
   private _facturasCargadas: Factura[] = [];
   private _facturasFaltantes: Factura[] = [];
   private _pagosCargados: Pago[] = [];
+  private _fechaElegida: Date = new Date(now());
 
   get pagosCargados(){
     return [...this._pagosCargados];
@@ -35,6 +36,10 @@ export class MensualidadService {
 
   get pagosTotales(){
     return [...this._pagosTotales];
+  }
+
+  get fechaElegida(){
+    return this._fechaElegida;
   }
 
   constructor(
@@ -61,6 +66,7 @@ export class MensualidadService {
   }
 
   obtenerResumen(fecha: Date){
+    this._fechaElegida = fecha;
     
     const params = new HttpParams()
     .set("fecha",
