@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { now } from 'moment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Factura, Pago, Mensualidad } from '../models/mensualidad.interface';
-import { environment } from '../../environments/environment';
-import { Conversiones } from './util/conversiones.util';
+import { Conversiones } from '../util/conversiones.util';
 
 @Injectable({
   providedIn: 'root'
