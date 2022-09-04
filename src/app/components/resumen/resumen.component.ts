@@ -30,16 +30,4 @@ export class ResumenComponent implements OnInit {
     this.mensualidadService.obtenerResumen(new Date(now()));
   }
 
-  abrirCargarFactura(){
-
-  }
-
-  abrirEliminarPago(){
-
-  }
-
-  abrirModificarPago(){
-    
-  }
-
 }
