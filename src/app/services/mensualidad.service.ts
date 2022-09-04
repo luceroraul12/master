@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { now } from 'moment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Factura, Pago, Mensualidad } from '../models/mensualidad.interface';
 import { environment } from '../../environments/environment';
 
@@ -9,9 +9,6 @@ import { environment } from '../../environments/environment';
 })
 export class MensualidadService {
 
-  private urlFactura: string = `${environment.mensualidadApi}/facturas`;
-  private urlPago:    string = `${environment.mensualidadApi}/pagos`;
-  private urlResumen: string = `${environment.mensualidadApi}/resumen`;
 
   private _facturasTotales: Factura[] = [];
   private _pagosTotales: Pago[] = [];
@@ -48,7 +45,12 @@ export class MensualidadService {
   }
 
   crearFactura(factura: Factura):void {
-    this._facturasTotales.push(factura);
+    const params = new HttpParams()
+    .set('nombre-servicio', factura.nombre);
+
+    this.http.post("/api/facturas", params).subscribe();
+    
+    this.obtenerFacturas();
   }
 
   crearPago(pago: Pago):void {
@@ -65,10 +67,11 @@ export class MensualidadService {
   }
 
   eliminarFactura(factura: Factura):void {
-    this._facturasTotales.splice(
-      this._facturasTotales.indexOf(factura)
-      , 
-      1);
+
+    const params = new HttpParams().set("id", factura.id);
+
+    this.http.delete("/api/facturas/delete", {params}).subscribe();
+    this.obtenerFacturas();
   }
 
   eliminarPago(pago: Pago):void {
